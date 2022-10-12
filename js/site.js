@@ -5,11 +5,10 @@ let dc = function(id){
 //called on btn press
 function getValue(){
     //store user string
-    let userString = dc("userString").value.toLowerCase().trim();
-    
+    let userString = dc("userString").value.toLowerCase();
+
     //removes special characters & spaces
-    userString = userString.replace(/\s/g, '');
-    userString = userString.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+    userString = userString.replace(/[^a-z0-9]/gi,'');
 
     //call function to reverse user string
     let reversedString = `${flipString(userString)}`
