@@ -1,11 +1,11 @@
-let $ = function(id){
+let dc = function(id){
     return document.getElementById(id);
 }
 
 //called on btn press
 function getValue(){
     //store user string
-    let userString = $("userString").value.toLowerCase().trim();;
+    let userString = dc("userString").value.toLowerCase().trim();
     let isPalindrome = false;
 
     //call function to reverse user string
@@ -36,14 +36,14 @@ function flipString(userString){
 
 function displayMessage(isPalindrome, reversedString){
     if (isPalindrome) {
-        $("alert").classList.remove("invisible", "alert-danger");
-        $("alert").classList.add("alert-success");
-        $("msg").innerHTML = `Your phrase reversed is: ${reversedString}`;
-        $("alert-heading").innerHTML = "Well Done! You entered a palindrome!";
+        dc("alert").classList.remove("invisible", "alert-danger");
+        dc("alert").classList.add("alert-success");
+        dc("msg").innerHTML = `Your phrase reversed is: ${reversedString}`;
+        dc("alert-heading").innerHTML = "Well Done! You entered a palindrome!";
     } else {
-        $("alert").classList.remove("invisible", "alert-success");
-        $("alert").classList.add("alert-danger");
-        $("alert-heading").innerHTML = "Please Try Again.";
-        $("msg").innerHTML = `Your phrase reversed is: ${reversedString}`;
+        dc("alert").classList.remove("invisible", "alert-success");
+        dc("alert").classList.add("alert-danger");
+        dc("alert-heading").innerHTML = "Please Try Again.";
+        dc("msg").innerHTML = `Your phrase reversed is: ${reversedString}`;
     }
 }
