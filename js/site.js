@@ -7,6 +7,8 @@ function getValue(){
     //store user string
     let userString = dc("userString").value.toLowerCase().trim();
     let isPalindrome = false;
+    userString = userString.replace(/\s/g, '');
+    userString = userString.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
 
     //call function to reverse user string
     let reversedString = `${flipString(userString)}`
