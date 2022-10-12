@@ -36,10 +36,6 @@ footer {
 }
 
 /*---- Footer Override Starts -----*/
-.footer {
-    background: var(--bl-dark-color);
-    color: var(--bl-light-color);
-}
 
 .socialIcons {
     color: var(--bl-primary-color);
