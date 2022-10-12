@@ -6,7 +6,8 @@ let dc = function(id){
 function getValue(){
     //store user string
     let userString = dc("userString").value.toLowerCase().trim();
-    let isPalindrome = false;
+    
+    //removes special characters & spaces
     userString = userString.replace(/\s/g, '');
     userString = userString.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
 
