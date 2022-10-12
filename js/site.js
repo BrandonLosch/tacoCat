@@ -1,34 +1,49 @@
+let $ = function(id){
+    return document.getElementById(id);
+}
 
-function getValue() {
+//called on btn press
+function getValue(){
+    //store user string
+    let userString = $("userString").value.toLowerCase().trim();;
+    let isPalindrome = false;
 
-    //hides the results alert
-    document.getElementById("alert").classList.add('invisible');
+    //call function to reverse user string
+    let reversedString = `${flipString(userString)}`
 
-    //get the value
-    let userString = document.getElementById("userString").value;
-
-    //Reverse the user input
-    let revString = reverseString(userString);
-
-    //display the user input
-    displayString(revString); 
+    //check if reversedString is the same as userString
+    //if the string is the same forwards as backwards return true,
+    if (userString == reversedString) {
+        isPalindrome = true;
+    } else {
+        isPalindrome = false;
+    } 
     
+    //display results
+    displayMessage(isPalindrome, reversedString);
 }
 
+function flipString(userString){
+    //create a new array to store new reversed string in
+    let reversedString = [];
 
-//Reverse the string
-function reverseString(userString) {
-    let usrArray = userString.split('');
-    let revArray = usrArray.reverse();
-    let revString = revArray.join('');
-
-    return revString;
-
+    //loop through userstring and create new array
+    for (let index = userString.length - 1; index >= 0; index--) {
+        reversedString += userString[index];
+    }
+    return reversedString;
 }
 
-//Display the string
-function displayString (revString) {
-    document.getElementById('msg').innerHTML = `Your String Reversed is:<strong>${revString}</strong>`;
-    document.getElementById("alert").classList.remove('invisible');
+function displayMessage(isPalindrome, reversedString){
+    if (isPalindrome) {
+        $("alert").classList.remove("invisible", "alert-danger");
+        $("alert").classList.add("alert-success");
+        $("msg").innerHTML = `Your phrase reversed is: ${reversedString}`;
+        $("alert-heading").innerHTML = "Well Done! You entered a palindrome!";
+    } else {
+        $("alert").classList.remove("invisible", "alert-success");
+        $("alert").classList.add("alert-danger");
+        $("alert-heading").innerHTML = "Please Try Again.";
+        $("msg").innerHTML = `Your phrase reversed is: ${reversedString}`;
+    }
 }
-
