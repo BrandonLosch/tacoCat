@@ -1,9 +1,17 @@
 :root {
-    --bl-primary-color: #b8c1ec;
-    --bl-secondary-color: #232946;
-    --bl-dark-color: #121629;
-    --bl-light-color: #fffffe;
-    --bl-navbar-glow: #fffffeaf;
+  --dark-navy: #f5e5ce;
+  --lightest-navy: #4c2b15;
+  --navy-shadow: #4c2b15;
+  --dark-slate: #ffbd59;
+  --slate: #4c2b15;
+  --light-slate: #4c2b15;
+  --lightest-slate: #4c2b15;
+  --white: #70c156;
+  --green: #ffbd59;
+
+  --font-mono: 'PT Mono';
+  --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  --font-luckiest: 'Luckiest Guy', cursive;
 }
 
 /*--------------------------------*/
@@ -45,135 +53,195 @@ footer {
 
 /*---- Footer Override ends -----*/
 
-/* Icons */
-.fab {
-    transition: 0.4s;
-  }
-  
-  .fas, .hover{
-    transition: 0.4s;
-  }
-  
-  .fab:hover {
-    color: var(--green);
-    -moz-transform: translate(0px, -5px);
-    -ms-transform: translate(0px, -5px);
-    -o-transform: translate(0px, -5px);
-    -webkit-transform: translate(0px, -5px);
-    transform: translate(0px, -5px)
-  }
-  
-  .fas:hover, .hover:hover {
-    color: var(--green);
-    -moz-transform: translate(0px, -5px);
-    -ms-transform: translate(0px, -5px);
-    -o-transform: translate(0px, -5px);
-    -webkit-transform: translate(0px, -5px);
-    transform: translate(0px, -5px)
-  }
-  
-  .icon {
-    font-size: 1.3em; 
-    color: #b0a388;
-  }
-  
-    .test {
-      background-color: var(--white);
-    }
-  
-    input:focus {
-      box-shadow: none !important;
-    }
-  
-    .btn:focus {
-      box-shadow: none !important;
-    }
-  
-
-.appLogo {
-    max-width: 600px;
+h1 {
+  color: var(--lightest-slate);
+  font-family: var(--font-luckiest);
 }
 
+h2, h3, h4, h5, h6 {
+    color: var(--slate);
+    font-weight: 700 !important;
+}  
 
-/*---- Nav Bar Override Starts ---- */
-#mainNav {
-    background-color: var(--bl-dark-color);
+body {
+    color: var(--lightest-slate);
+    background-color: var(--dark-navy);
+    font-family: var(--font-sans);
+    font-weight: 700;
 }
 
-#mainNav button {
-    border-color: var(--bl-primary-color);
+.green-text{
+    color: var(--green);
+}
+
+main>.container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+
+/* Logo */
+.b-circle {
+  border: solid;
+  border-color: #64ffda;
+  color: #64ffda !important;
+  padding: 5px 13px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.b-circle:hover {
+  background-color:rgba(39.2,100,85.5,0.3);
+}
+
+.logo {
+    color: var(--slate);
+}
+
+/* Nav */
+.sticky-nav {
+    position: fixed;
+    width: 100%;
+}
+
+nav {
+    background-color: var(--dark-navy);
+    font-family: var(--font-sans);
+}
+
+.nav-link:hover {
+    color: var(--dark-slate) !important;
+}
+
+.nav-link{
+    color: var(--slate) !important;
+    padding-top: 10px !important;
+    font-family: var(--font-luckiest);
+    font-size: 1.5em;
+}
+
+.nav-item {
+    padding-left: 15px;
+}
+
+.nav-active {
+    color: var(--dark-slate) !important;
 }
 
 .navbar-toggler {
-    color: var(--bl-navbar-glow);
+    color: var(--dark-navy) !important;
 }
 
-.navbar-toggler-icon-bl {
-    color: var(--bl-primary-color);
-    font-size: 1.5rem;
+/* Button */
+.btn {
+  font-family: var(--font-luckiest);
+  color: var(--dark-navy);
+  background-color: var(--slate) !important;
+  font-size: 1.3em;
+
 }
 
-/*---- Nav Bar Override Ends ---- */
-.checkList {
-    list-style-type: none;
+.btn:hover {
+  background-color: var(--green) !important;
+  color: var(--slate) !important;
 }
 
-.checkList>li i {
-    color: var(--bl-secondary-color);
+.checklist >li i{
+  color: var(--green);
 }
 
+code[class*="language-"],
+  pre[class*="language-"] {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
 
-.devIcons {
-    color: var(--bl-secondary-color);
-    font-size: 3rem;
-    padding-left: .3rem;
+a {
+  text-decoration: none;
+  color: var(--lightest-slate);
 }
 
-/*------- Button style override starts ---------*/
-.btn-outline-primary {
-    color: var(--bl-dark-color);
-    border-color: var(--bl-secondary-color) !important;
-  }
-
-  .btn-outline-primary:hover,
-.btn-outline-primary:active,
-.btn-outline-primary:focus {
-  border-color: var(--bl-highlight-color);
-  background-color: var(--bl-secondary-color);
+a:hover {
+  color: var(--green);
 }
 
-.btn-primary {
-    color: var(--bl-light-color);
-    background-color: var(--bl-secondary-color);
-    border-color: var(--bl-secondary-color);
-    
+.btn-portfolio{
+  padding: 10px 18px;
+}
+
+/* Icons */
+.fab {
+  transition: 0.4s;
+}
+
+.fas, .hover{
+  transition: 0.4s;
+}
+
+.fab:hover {
+  color: var(--green);
+  -moz-transform: translate(0px, -5px);
+  -ms-transform: translate(0px, -5px);
+  -o-transform: translate(0px, -5px);
+  -webkit-transform: translate(0px, -5px);
+  transform: translate(0px, -5px)
+}
+
+.fas:hover, .hover:hover {
+  color: var(--green);
+  -moz-transform: translate(0px, -5px);
+  -ms-transform: translate(0px, -5px);
+  -o-transform: translate(0px, -5px);
+  -webkit-transform: translate(0px, -5px);
+  transform: translate(0px, -5px)
+}
+
+.icon {
+  font-size: 1.3em; 
+  color: var(--slate);
+}
+
+  .test {
+    background-color: var(--white);
   }
-  
-  .btn-secondary {
-    color: var(--bl-light-color);
-    background-color: #55423d;
-    border-color: #55423d;
-    
+
+  input:focus {
+    box-shadow: none !important;
   }
-  
-  .btn-secondary:hover {
-    filter: brightness(1.1) !important;
-    background-color: #a15656;
-    border-color: #ffc0ad;
+
+  .btn:focus {
+    box-shadow: none !important;
   }
-  
-  .btn-primary:hover {
-    filter: brightness(1.1) !important;
-    background-color: var(--bl-primary-color);
-    border-color: var(--bl-highlight-color);
+
+  /* Table */
+  table, th, td {
+    border: 1px solid var(--dark-navy);
+    color: var(--green);
+    font-size: 1.1em;
+    font-weight: 200;
   }
-  
-  .btn-primary:visited,
-  .btn-primary:active,
-  .btn-primary:focus {
-    filter: brightness(1.1) !important;
-    border-color: var(--bl-primary-color);
+
+  tr:nth-child(odd) {
+    background-color: var(--dark-navy);
   }
-  
-  
-  /*---------- button style override ends -------------*/
+
+  tr:nth-child(even) {
+    background-color: var(--navy-shadow);
+  }
+
+  .even {
+    font-weight: 800;
+  }
+
+  /* Footer */
+  footer {
+      background-color: var(--dark-navy);
+      color: var(--slate) !important;
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    .side-border{
+      border-right: solid 2px white;
+    }
+  }
